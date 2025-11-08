@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*', // Be more specific in production
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
+  origin: true, // Allow all origins during testing
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Accept', 'Origin'],
+  credentials: true
 }));
 app.use(express.json());
 
