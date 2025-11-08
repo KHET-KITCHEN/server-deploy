@@ -40,6 +40,11 @@ app.get('/api/test', (req, res) => {
   });
 });
 
+// Test route
+app.get('/test', (req, res) => {
+  res.json({ message: 'Server is running!' });
+});
+
 // Initialize Razorpay
 if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {
   console.warn('⚠️  Razorpay keys not configured. Payment functionality will not work.');
